@@ -13,10 +13,7 @@ class ShoppingItemAdapter(
     var items: List<ShoppingItem>,
     private val viewModel: ShoppingViewModel
 ) : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingViewHolder>() {
-    inner class ShoppingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    }
-
+    inner class ShoppingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoppingViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.shopping_item, parent, false)

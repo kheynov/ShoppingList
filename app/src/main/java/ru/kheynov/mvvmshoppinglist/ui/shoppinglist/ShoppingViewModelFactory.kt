@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import ru.kheynov.mvvmshoppinglist.data.repositories.ShoppingRepository
 
+@SuppressWarnings("Unchecked")
 class ShoppingViewModelFactory(
     private val repository: ShoppingRepository
 ) : ViewModelProvider.NewInstanceFactory(){

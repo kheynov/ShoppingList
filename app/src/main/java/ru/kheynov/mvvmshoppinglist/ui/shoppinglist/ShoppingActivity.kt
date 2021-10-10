@@ -1,7 +1,7 @@
 package ru.kheynov.mvvmshoppinglist.ui.shoppinglist
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,6 +14,7 @@ import ru.kheynov.mvvmshoppinglist.data.db.entities.ShoppingItem
 import ru.kheynov.mvvmshoppinglist.data.repositories.ShoppingRepository
 
 class ShoppingActivity : AppCompatActivity() {
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping)
@@ -32,13 +33,13 @@ class ShoppingActivity : AppCompatActivity() {
             adapter.items = it
             adapter.notifyDataSetChanged()
         })
-        fab.setOnClickListener{
+        fab.setOnClickListener {
             AddShoppingItemDialog(this,
-            object : AddDialogListener{
-                override fun onAddButtonClick(item: ShoppingItem) {
-                    viewModel.upsert(item)
-                }
-            }).show()
+                object : AddDialogListener {
+                    override fun onAddButtonClick(item: ShoppingItem) {
+                        viewModel.upsert(item)
+                    }
+                }).show()
         }
     }
 }

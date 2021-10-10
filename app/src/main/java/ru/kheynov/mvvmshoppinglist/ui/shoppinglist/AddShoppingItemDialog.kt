@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.dialog_add_shopping_item.*
 import ru.kheynov.mvvmshoppinglist.R
 import ru.kheynov.mvvmshoppinglist.data.db.entities.ShoppingItem
 
-class AddShoppingItemDialog(context: Context, var addDialogListener: AddDialogListener) :
+class AddShoppingItemDialog(context: Context, private var addDialogListener: AddDialogListener) :
     AppCompatDialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
