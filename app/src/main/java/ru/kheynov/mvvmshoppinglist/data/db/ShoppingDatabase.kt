@@ -12,6 +12,7 @@ import ru.kheynov.mvvmshoppinglist.data.db.entities.ShoppingItem
     version = 1
 )
 abstract class ShoppingDatabase : RoomDatabase() {
+
     abstract fun getShoppingDao(): ShoppingDao
 
     companion object {
@@ -19,7 +20,6 @@ abstract class ShoppingDatabase : RoomDatabase() {
         private var instance: ShoppingDatabase? = null
 
         private var LOCK = Any()
-
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
             instance ?: createDatabase(context).also { instance = it }
         }

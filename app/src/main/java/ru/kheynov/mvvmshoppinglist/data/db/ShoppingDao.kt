@@ -8,7 +8,7 @@ import ru.kheynov.mvvmshoppinglist.data.db.entities.ShoppingItem
 interface ShoppingDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(item: ShoppingItem)
+    suspend fun upsert(vararg item: ShoppingItem)
 
     @Delete
     suspend fun delete(item: ShoppingItem)
